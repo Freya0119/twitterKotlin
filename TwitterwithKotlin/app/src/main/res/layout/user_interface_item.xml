@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="who"
+            type="com.example.twitterwithkotlin.model.TweetUser" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="2dp">
+
+        <ImageView
+            android:id="@+id/user_inter_item_imageView"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:background="@color/teal_200"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/user_inter_item_name_textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="user name"
+            android:padding="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/user_inter_item_imageView"
+            app:layout_constraintTop_toTopOf="@+id/user_inter_item_imageView" />
+
+        <TextView
+            android:id="@+id/user_inter_item_body_textView"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="2dp"
+            android:background="@color/teal_700"
+            android:padding="4dp"
+            android:text="Post text"
+            app:layout_constraintTop_toBottomOf="@+id/user_inter_item_imageView" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/inter_body_text_msg_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:background="@color/purple_200"
+            android:orientation="vertical"
+            android:padding="4dp"
+            app:layout_constraintTop_toBottomOf="@+id/user_inter_item_body_textView" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="4dp"
+            android:background="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inter_body_text_msg_recyclerView" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
