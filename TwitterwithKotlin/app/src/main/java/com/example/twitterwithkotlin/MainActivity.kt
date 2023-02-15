@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
+import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
@@ -45,8 +46,6 @@ class MainActivity : AppCompatActivity() {
         this.findViewById<ImageView>(R.id.main_login_imageView).setOnClickListener {
             setImage()
         }
-
-        checkUid()
     }
 
     private fun jumpActivity() {

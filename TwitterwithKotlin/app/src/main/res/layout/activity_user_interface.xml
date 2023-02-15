@@ -1,39 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:showDividers="middle">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/user_inter_recyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toTopOf="@+id/user_inter_editText"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_weight="5"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
-    <EditText
-        android:id="@+id/user_inter_editText"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="4dp"
-        android:background="@color/teal_700"
-        android:hint="here is send text edittext"
-        android:padding="4dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/user_inter_send_button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user_inter_recyclerView" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@color/purple_200">
 
-    <Button
-        android:id="@+id/user_inter_send_button"
-        android:layout_width="100dp"
-        android:layout_height="0dp"
-        android:text="send button"
-        app:layout_constraintBottom_toBottomOf="@+id/user_inter_editText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/user_inter_editText" />
+        <EditText
+            android:id="@+id/send_editText"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/teal_200"
+            android:hint="input text"
+            android:padding="2dp"
+            app:layout_constraintBottom_toTopOf="@+id/send_image_button"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/send_image_button"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="2dp"
+            android:text="send image"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/send_editText" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>
